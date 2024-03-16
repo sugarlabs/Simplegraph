@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Copyright (C) 2012, Gonzalo Odiard <godiard@gmail.com>
 
@@ -20,9 +20,7 @@
 
 from gettext import gettext as _
 
-from gi.repository import Gtk
-from gi.repository import Gdk
-from gi.repository import GObject
+from gi.repository import Gtk, Gdk, GObject
 
 from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.icon import Icon
@@ -32,10 +30,10 @@ from sugar3.graphics import style
 class HelpButton(Gtk.ToolItem):
 
     def __init__(self, **kwargs):
-        GObject.GObject.__init__(self)
+        super().__init__(**kwargs)
 
         help_button = ToolButton('toolbar-help')
-        help_button.set_tooltip(_('Help'))
+        help_button.set_tooltip_text(_('Help'))
         self.add(help_button)
 
         self._palette = help_button.get_palette()
@@ -50,7 +48,7 @@ class HelpButton(Gtk.ToolItem):
         self._vbox.set_orientation(Gtk.Orientation.VERTICAL)
         self._vbox.set_homogeneous(False)
 
-        sw.add_with_viewport(self._vbox)
+        sw.add(self._vbox)
 
         self._palette.set_content(sw)
         sw.show_all()
@@ -72,18 +70,17 @@ class HelpButton(Gtk.ToolItem):
             _icon = Icon(icon_name=icon)
             hbox.pack_end(_icon, False, False, 10)
         hbox.show_all()
-        self._vbox.pack_start(hbox, False, False, padding=5)
+        self._vbox.pack_start(hbox, False, False, 5)
 
     def add_paragraph(self, text, icon=None):
         hbox = Gtk.Box()
         label = Gtk.Label(label=text)
         label.set_justify(Gtk.Justification.LEFT)
         label.set_line_wrap(True)
-        label.props.max_width_chars = 35
+        label.set_max_width_chars(35)
         hbox.pack_start(label, False, False, 0)
         if icon is not None:
             _icon = Icon(icon_name=icon)
             hbox.pack_end(_icon, False, False, 10)
         hbox.show_all()
-        self._vbox.pack_start(hbox, False, False, padding=5)
-        
+        self._vbox.pack_start(hbox, False, False, 5)

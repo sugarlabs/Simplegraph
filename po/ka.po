@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-11-15 00:33-0500\n"
-"PO-Revision-Date: 2026-06-15 08:49+0000\n"
+"PO-Revision-Date: 2026-06-15 16:05+0000\n"
 "Last-Translator: NF <rkavt@smartprojects.ge>\n"
 "Language-Team: Georgian <http://weblate.sugarlabs.org/projects/"
 "sugar-activities/simple-graph/ka/>\n"
@@ -121,7 +121,7 @@ msgstr ""
 
 #: activity.py:773
 msgid "Label"
-msgstr ""
+msgstr "ჭდე"
 
 #: activity.py:784
 msgid "Value"
@@ -173,7 +173,7 @@ msgstr "ხაზები"
 
 #: charthelp.py:24
 msgid "Pie"
-msgstr ""
+msgstr "ღვეზელი"
 
 #: charthelp.py:26
 msgid "Configs"
@@ -234,7 +234,7 @@ msgstr "დრო"
 
 #: readers.py:51
 msgid "Mark"
-msgstr ""
+msgstr "ჭდე"
 
 #: readers.py:126
 msgid "Values"
